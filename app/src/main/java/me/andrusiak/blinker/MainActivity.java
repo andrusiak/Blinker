@@ -1,17 +1,25 @@
 package me.andrusiak.blinker;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    static {
+//        System.loadLibrary("opencv_java");
+        System.loadLibrary("blink");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TextView textView = (TextView)findViewById(R.id.messageView);
+        textView.setText(getNativeString());
     }
 
 
@@ -36,4 +44,6 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public native String getNativeString();
 }

@@ -1,0 +1,1 @@
+cd app\src\main && javah -d jni -classpath c:\android\sdk\platforms\android-21\android.jar;C:\Android\sdk\extras\android\m2repository\com\android\support\appcompat-v7\22.1.0\appcompat-v7-22.1.0-sources.jar;..\..\build\intermediates\classes\debug  me.andrusiak.blinker.MainActivity
